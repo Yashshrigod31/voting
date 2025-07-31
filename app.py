@@ -3,7 +3,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 
 # Initialize the Flask application
-app = Flask(_name_)
+app = Flask(__name__)
 
 # A simple in-memory dictionary to store candidates and their vote counts.
 # In a real application, you would use a database.
@@ -54,7 +54,7 @@ def vote():
         
     return render_template('vote.html', candidates=poll_data['candidates'])
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     # The "debug=True" argument is convenient for development but should be
     # removed in a production environment.
     app.run(debug=True)
