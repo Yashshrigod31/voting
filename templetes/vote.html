@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; }
+        h1 { color: #333; }
+        .option { margin-bottom: 10px; }
+        button { background-color: #28a745; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px;}
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <h1>Cast Your Vote</h1>
+    <p>Select one candidate and click the finish button to see the results.</p>
+    <form method="post">
+        {% for candidate in candidates %}
+        <div class="option">
+            <input type="radio" id="{{ candidate }}" name="candidate" value="{{ candidate }}" required>
+            <label for="{{ candidate }}">{{ candidate }}</label>
+        </div>
+        {% endfor %}
+        <button type="submit">Finish & See Results</button>
+    </form>
+</body>
+</html>
